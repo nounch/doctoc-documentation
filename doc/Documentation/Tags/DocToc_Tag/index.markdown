@@ -117,3 +117,7 @@ Example output:
 </li><li><a href="/doc/Overview">Overview</a>
 </li>
 ```
+
+## `parent-node` argument
+
+`doctoc` takes the `parent-node` argument which renders the entire subtree for the current page if there is a subtree. The optional second argument specifies replacement text which is rendered if the current page does not have a subtree because it is a leaf node. The replacement text can be valid HTML and will be rendered as such.

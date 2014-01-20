@@ -3,16 +3,35 @@
  **************************************************************************/
 
 #main-content {
-  font-size: 1.4em;
+  /* font-size: 1.4em; */
   line-height: 1.4em;
   padding-bottom: 30px;
   margin-bottom: 30px;
   border-bottom: 10px solid #F1F1F1;
+  padding-left: 10px;
 }
 
 a {
   color: #AF2323;
   font-style: bold;
+}
+
+#previous-link, #next-link {
+  padding: 30px;
+  margin-top: 30px;
+}
+
+#parent-node-link {
+  /* border-left: 1px solid #F1F1F1; */
+  padding-left: 30px;
+}
+
+#parent-node-link li {
+  list-style: none;
+}
+
+#parent-node-link li a {
+  color: #8A8A8A;
 }
 
 /**************************************************************************
@@ -45,7 +64,7 @@ a {
   font-size: 0.9em;
   padding: 0;
   margin: 0;
-  border: 10px solid #F1F1F1;
+  /* border: 10px solid #F1F1F1; */
 }
 
 #site-toc ul {
@@ -55,6 +74,7 @@ a {
 
 #site-toc li {
   list-style: none;
+  padding-left: 5px;
   color: #DFDFDF;
   margin: 0;
   text-decoration: none;
@@ -62,7 +82,7 @@ a {
 
 #site-toc li a {
   display: block;
-  padding: 15px;
+  padding: 10px;
 }
 
 #site-toc li a:hover, #site-toc li a:active, #site-toc li a:focus  {

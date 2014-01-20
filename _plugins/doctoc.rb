@@ -999,14 +999,18 @@ eos
         index = prev_next_list.index(path)
       end
 
-      prev_path = prev_next_list[index - 1]
 
       # The `nil' test ensures that Jekyll will not terminate when no
       # valid index is returned.
       if index != nil
-        html = "<a href=\"#{prev_path}\">Previous</a>"
+        prev_path = prev_next_list[index - 1]
+        html = "<a href=\"#{prev_path.gsub(/ /, '_')}\">Previous</a>"
       end
+
       if !@text.empty?
+        if prev_path != nil
+          prev_path = prev_path.gsub(/ /, '_')
+        end
 
         if @text =~ /^ *#{Regexp.quote(@prev_with_parens)} *$/
           html = "<a href=\"#{prev_path}\">Previous (\
@@ -1014,7 +1018,8 @@ eos
         end
 
         if @text =~ /^ *#{Regexp.quote(@prev_only_name)} *$/
-          html = "<a href=\"#{prev_path}\">#{File.basename prev_path}</a>"
+          html = "<a href=\"#{prev_path}\"\
+>#{File.basename prev_path}</a>"
         end
 
         if @text =~ /^ *#{Regexp.quote(@prev_only_prev)} *$/
@@ -1028,7 +1033,8 @@ eos
         if @text =~ /^ *#{Regexp.quote(@prev_custom)} *,/
           replacement =
             @text.gsub(/^ *#{Regexp.quote(@prev_custom)} *,/, '')
-          html = "<a href=\"#{prev_path}\">#{replacement}</a>"
+          html = "<a href=\"#{prev_path}\"\
+>#{replacement}</a>"
         end
 
       end
@@ -1070,22 +1076,28 @@ eos
       if prev_next_list != nil
         idx = prev_next_list.index(path)
 
-        if idx >= (prev_next_list.length - 1)
-          index = -1
-        else
-          index = idx
+        if idx != nil
+          if idx >= (prev_next_list.length - 1)
+            index = -1
+          else
+            index = idx
+          end
         end
 
       end
 
-      next_path = prev_next_list[index + 1]
 
       # The `nil' test ensures that Jekyll will not terminate when no
       # valid index is returned.
       if index != nil
-        html = "<a href=\"#{next_path}\">Next</a>"
+        next_path = prev_next_list[index + 1]
+        html = "<a href=\"#{next_path.gsub(/ /, '_')}\">Next</a>"
       end
+
       if !@text.empty?
+        if next_path != nil
+          next_path = next_path.gsub(/ /, '_')
+        end
 
         if @text =~ /^ *#{Regexp.quote(@next_with_parens)} *$/
           html = "<a href=\"#{next_path}\">Next (\
@@ -1352,22 +1364,22 @@ eos
       path = path.gsub(/_/, ' ').gsub(/\/$/, '').gsub(/^\//, '')
       toc = toc_tree.find('/' + path, toc_tree.root, true)
 
-      if toc.name != toc_tree.top_level_dir_name
-        children = toc.children
-        if children.length > 0
-          if @text =~ /.*,.*/
-            html << @text.gsub(/^.*,/, '').strip
-          end
-          html << '<ul>'
-          children.each do |child|
-            html << "<li><a\
- href=\"#{child.name.gsub(/ /, '_')}\">#{File.basename(child.name)}</a></li>"
-          end
-          html << '</ul>'
+      # if toc.name != toc_tree.top_level_dir_name
+      children = toc.children
+      if children.length > 0
+        if @text =~ /.*,.*/
+          html << @text.gsub(/^.*,/, '').strip
         end
-      else
-        ''  # Do not render anything.
+        html << '<ul>'
+        children.each do |child|
+          html << "<li><a\
+ href=\"#{child.name.gsub(/ /, '_')}\">#{File.basename(child.name)}</a></li>"
+        end
+        html << '</ul>'
       end
+      # else
+      #   ''  # Do not render anything.
+      # end
 
       html
     end
@@ -1398,18 +1410,14 @@ eos
       path = path.gsub(/_/, ' ').gsub(/\/$/, '').gsub(/^\//, '')
       toc = toc_tree.find('/' + path, toc_tree.root, true)
 
-      if toc.name != toc_tree.top_level_dir_name
-        subtree_html << toc.html(:children_only => true)
-        if subtree_html != ''
-          if @text =~ /.*,.*/
-            html << @text.gsub(/^.*,/, '').strip
-          end
-          html << '<ul>'
-          html << subtree_html
-          html << '</ul>'
+      subtree_html << toc.html(:children_only => true)
+      if subtree_html != ''
+        if @text =~ /.*,.*/
+          html << @text.gsub(/^.*,/, '').strip
         end
-      else
-        ''  # Do not render anything.
+        html << '<ul>'
+        html << subtree_html
+        html << '</ul>'
       end
 
       html
