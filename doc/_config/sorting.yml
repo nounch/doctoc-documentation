@@ -6,33 +6,32 @@
 
 # Top level
 1:
-  - colors
-  - animals
+  - About
+  - Getting Started
+  - Overview
+  - Documentation
 
 # Second level of indentation
 2:
-  - dark
-  - bright
+  - Tags
+  - Configuration
 
-  - more nonsense
-  - nonsense
-
-# Third level of indentation
 3:
-  - orange
-  - yellow
-  - red
+  - DocToc Tag
+  - Breadcrumb Tag
+  - Up Tag
+  - Prev Tag
+  - Next Tag
+  - Children Tag
+  - Children Of Tag
+  - Sibling Tag
+  - Subtree Of Tag
+  - Sort Tag
 
-  - CDE Truck
-  - ABC Truck
-
-  - blue
-  - purple
 
 #==========================================================================
 # The `all' section includes a sorting order which should be applied
 # throughout all indentation levels.
 #==========================================================================
 all:
-  - FGH Truck
-  - IJK Truck
+  -

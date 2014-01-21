@@ -1,11 +1,11 @@
 ---
 layout: documentation
-title:  "Getting started"
+title:  "Getting Started"
 permalink: /
 ---
 
 
-# Getting started
+# Getting Started
 
 ## 1. A new project
 

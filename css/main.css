@@ -3,17 +3,33 @@
  **************************************************************************/
 
 #main-content {
-  /* font-size: 1.4em; */
+  font-size: 1.2em;
   line-height: 1.4em;
   padding-bottom: 30px;
   margin-bottom: 30px;
-  border-bottom: 10px solid #F1F1F1;
-  padding-left: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #FEFEFE;
+  border-bottom: 65px solid rgb(249, 242, 244);
+}
+
+#main-content img {
+  border: 3px solid #F1F1F1;
+  max-width: 650px;
+  max-height: 900px;
+  height: auto;
+  display: block;
 }
 
 a {
   color: #AF2323;
   font-style: bold;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: #FA2323;
+  transition: 350ms all ease-out;
 }
 
 #previous-link, #next-link {
@@ -22,7 +38,6 @@ a {
 }
 
 #parent-node-link {
-  /* border-left: 1px solid #F1F1F1; */
   padding-left: 30px;
 }
 
@@ -34,13 +49,41 @@ a {
   color: #8A8A8A;
 }
 
+#parent-node-link a:hover,
+#parent-node-link a:focus,
+#parent-node-link a:active {
+  color: #343434;
+  font-weight: bold;
+  transition: 350ms color ease-out;
+}
+
+#sibling-children-section li {
+  list-style: none;
+  border-bottom: 1px solid #DFDFDF;
+}
+
+
 /**************************************************************************
  * Header
  **************************************************************************/
 
 #main-header {
-  padding-top: 50px;
-  padding-bottom: 100px;
+}
+
+#top-line {
+  border-bottom: 1px solid #AFAFAF;
+  width: 100%;
+  margin-top: 5px;
+  /* margin-bottom: 50px; */
+  /* margin-bottom: 100px; */
+}
+
+#top-line-two {
+  border-top: 2px solid #F1F1F1;
+  width: 100%;
+  margin-bottom: 50px;
+  margin-bottom: 100px;
+  border-bottom: 65px solid rgb(249, 242, 244);
 }
 
 #sub-header {
@@ -64,7 +107,6 @@ a {
   font-size: 0.9em;
   padding: 0;
   margin: 0;
-  /* border: 10px solid #F1F1F1; */
 }
 
 #site-toc ul {
@@ -83,15 +125,26 @@ a {
 #site-toc li a {
   display: block;
   padding: 10px;
+  color: #343434;
+  font-weight: bold;
 }
+
+#site-toc li li a {
+  font-style: italic;
+}
+
+#site-toc li li li a {
+  font-family: monospace;
+}
+
 
 #site-toc li a:hover, #site-toc li a:active, #site-toc li a:focus  {
   text-decoration: none;
   transition: all 100ms ease-out;
   color: #FA2323;
   display: block;
-  background-color: #F1F1F1;
-  padding-left: 20px;
+  /* background-color: #F1F1F1; */
+  /* padding-left: 20px; */
 }
 
 #site-toc li a {
@@ -113,8 +166,6 @@ a {
 
 #main-breadcrumb {
   height: 50px;
-/* border-bottom: 1px solid #EAEAEA; */
-/* padding-bottom: 20px; */
 }
 
 #main-breadcrumb a {
