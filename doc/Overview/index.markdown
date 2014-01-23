@@ -52,7 +52,7 @@ Or this:
 
 ```
 {% raw %}
-{% doctoc_breadcrumb %}
+{% doctoc_breadcrumb → %}
 {% endraw %}
 ```
 
