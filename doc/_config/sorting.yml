@@ -1,0 +1,37 @@
+---
+#==========================================================================
+# Each key refers to an indentation level; e.g. `1' is the top level, `2'
+# is the second indentation level, `3' the third one etc.
+#==========================================================================
+
+# Top level
+1:
+  - About
+  - Getting Started
+  - Overview
+  - Documentation
+
+# Second level of indentation
+2:
+  - Tags
+  - Configuration
+
+3:
+  - DocToc Tag
+  - Breadcrumb Tag
+  - Up Tag
+  - Prev Tag
+  - Next Tag
+  - Children Tag
+  - Children Of Tag
+  - Sibling Tag
+  - Subtree Of Tag
+  - Sort Tag
+
+
+#==========================================================================
+# The `all' section includes a sorting order which should be applied
+# throughout all indentation levels.
+#==========================================================================
+all:
+  -
