@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>doctoc_sort Tag</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" />
+
+  </head>
+  <body>
+
+    
+
+    <div class="container">
+      <div id="main-header" class="row">
+        <div class="col-md-12">
+          <h1 class="title">Doc<span id="header-toc-part">Toc</span> <span id="sub-header">Jekyll Documentation Helper</span></h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="top-line"></div>
+    <div id="top-line-two"></div>
+
+    <div class="container">
+      <div class="container row">
+
+        <div class="col-md-2">
+          <div class="row">
+            <div id="site-toc" class="col-md-12">
+              <li><a href="/doc/About">About</a>
+</li><li><a href="/doc/Getting_Started">Getting Started</a>
+</li><li><a href="/doc/Overview">Overview</a>
+</li><li><a href="/doc/Documentation">Documentation</a>
+<ul>
+<li><a href="/doc/Documentation/Tags">Tags</a>
+<ul>
+<li><a href="/doc/Documentation/Tags/DocToc_Tag">DocToc Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Breadcrumb_Tag">Breadcrumb Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Up_Tag">Up Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Prev_Tag">Prev Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Next_Tag">Next Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Children_Tag">Children Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Children_Of_Tag">Children Of Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Sibling_Tag">Sibling Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Subtree_Of_Tag">Subtree Of Tag</a>
+</li>
+<li><a class="current-tree-node" href="/doc/Documentation/Tags/Sort_Tag">Sort Tag</a>
+</li>
+</ul>
+</li>
+<li><a href="/doc/Documentation/Configuration">Configuration</a>
+</li>
+</ul>
+</li><li><a href="/doc/Workflow">Workflow</a>
+</li>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-8">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="site">
+              </div>
+
+
+              <div id="main-content">
+
+                <div class="row">
+                  <div class="col-md-10">
+                    <div id="main-breadcrumb">
+                      <a href="/doc/Documentation">Documentation</a><span> → </span><a href="/doc/Documentation/Tags">Tags</a><span> → </span><span>Sort Tag<span>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-right">
+                    <a href="/doc/Documentation/Tags"><p>↑ Go up</p></a>
+                  </div>
+                </div>
+
+                <h1><code>doctoc_sort</code> Tag</h1>
+
+<p>This tag causes the TOC tree to be sorted before rendering. Sorting happens on every individual level of the hierarchy e.g. every hierarchy level will be treated as a flat list and sorted according to the criteria specified. By default, the tree is sorted <strong>lexically</strong>.</p>
+
+<p>If a different sorting order order should be applied, <code>doctoc_sort</code> offers three sorting criteria.</p>
+
+<h2>Lexical Sorting</h2>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{% doctoc_sort lexical %}
+</code></pre></div>
+<h2>Sorting By String Length</h2>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{% doctoc_sort string_length %}
+</code></pre></div>
+<h2>Custom Sorting:</h2>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{% doctoc_sort custom %}
+</code></pre></div>
+<p>The <code>custom</code> argument forces DocToc to read the <code>_config/sorting.yml</code> file in the root of the pages directory and to apply its rules. If this config file does not exist yet, it will be created automatically and populated with sample configuration.</p>
+
+<p>The default content of <code>_config/sorting.yml</code> looks like this:</p>
+<div class="highlight"><pre><code class="yaml language-yaml" data-lang="yaml"><span class="nn">---</span>
+<span class="c1">#==========================================================================</span>
+<span class="c1"># Each key refers to an indentation level; e.g. `1&#39; is the top level, `2&#39;</span>
+<span class="c1"># is the second indentation level, `3&#39; the third one etc.</span>
+<span class="c1">#==========================================================================</span>
+
+<span class="c1"># Top level</span>
+<span class="l-Scalar-Plain">1</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">colors</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">animals</span>
+
+<span class="c1"># Second level of indentation</span>
+<span class="l-Scalar-Plain">2</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">dark</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">bright</span>
+
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">more nonsense</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">nonsense</span>
+
+<span class="c1"># Third level of indentation</span>
+<span class="l-Scalar-Plain">3</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">orange</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">yellow</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">red</span>
+
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">CDE Truck</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ABC Truck</span>
+
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">blue</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">purple</span>
+
+<span class="c1">#==========================================================================</span>
+<span class="c1"># The `all&#39; section includes a sorting order which should be applied</span>
+<span class="c1"># throughout all indentation levels.</span>
+<span class="c1">#==========================================================================</span>
+<span class="l-Scalar-Plain">all</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">FGH Truck</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">IJK Truck</span>
+</code></pre></div>
+<h2>Reversing The Sort Order</h2>
+
+<p>Every one of the three  sorting criteria takes an optional second argument <code>reverse</code>. If this is present, every list on every level of the hierarchy will be sorted first and reversed afterwards.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{% doctoc_sort lexical, reverse %}
+{% doctoc_sort string_length, reverse %}
+{% doctoc_sort custom, reverse %}
+</code></pre></div>
+
+                <div class="row">
+                  <div class="col-xs-6 text-center">
+                    <div id="previous-link">
+                      <a href="/doc/Documentation/Tags/Subtree_Of_Tag"> ← Previous </a>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 text-center">
+                    <div id="next-link">
+                      <a href="/doc/Documentation/Configuration"> Next → </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row text-center" id="sibling-children-section">
+                <div class="col-xs-6">
+                  <div>
+                    
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <h3>Sibling Pages</h3><ul><li><a href="/doc/Documentation/Tags/DocToc Tag">DocToc Tag</a></li><li><a href="/doc/Documentation/Tags/Breadcrumb Tag">Breadcrumb Tag</a></li><li><a href="/doc/Documentation/Tags/Up Tag">Up Tag</a></li><li><a href="/doc/Documentation/Tags/Prev Tag">Prev Tag</a></li><li><a href="/doc/Documentation/Tags/Next Tag">Next Tag</a></li><li><a href="/doc/Documentation/Tags/Children Tag">Children Tag</a></li><li><a href="/doc/Documentation/Tags/Children Of Tag">Children Of Tag</a></li><li><a href="/doc/Documentation/Tags/Sibling Tag">Sibling Tag</a></li><li><a href="/doc/Documentation/Tags/Subtree Of Tag">Subtree Of Tag</a></li></ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-2" id="parent-node-link">
+          <div class="row">
+            <a href="/doc/Documentation/Tags"><strong>Parent node</strong> </p>
+          </div>
+        </div>
+
+      </div>
+
+
+  </body>
+</html>

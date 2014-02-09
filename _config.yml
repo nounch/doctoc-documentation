@@ -1,5 +1,0 @@
-name: DocToc
-markdown: redcarpet
-pygments: true
-relative_permalinks: true
-doctoc_dir: /doc

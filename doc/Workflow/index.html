@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Workflow</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" />
+
+  </head>
+  <body>
+
+    
+
+    <div class="container">
+      <div id="main-header" class="row">
+        <div class="col-md-12">
+          <h1 class="title">Doc<span id="header-toc-part">Toc</span> <span id="sub-header">Jekyll Documentation Helper</span></h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="top-line"></div>
+    <div id="top-line-two"></div>
+
+    <div class="container">
+      <div class="container row">
+
+        <div class="col-md-2">
+          <div class="row">
+            <div id="site-toc" class="col-md-12">
+              <li><a href="/doc/About">About</a>
+</li><li><a href="/doc/Getting_Started">Getting Started</a>
+</li><li><a href="/doc/Overview">Overview</a>
+</li><li><a href="/doc/Documentation">Documentation</a>
+<ul>
+<li><a href="/doc/Documentation/Tags">Tags</a>
+<ul>
+<li><a href="/doc/Documentation/Tags/DocToc_Tag">DocToc Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Breadcrumb_Tag">Breadcrumb Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Up_Tag">Up Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Prev_Tag">Prev Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Next_Tag">Next Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Children_Tag">Children Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Children_Of_Tag">Children Of Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Sibling_Tag">Sibling Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Subtree_Of_Tag">Subtree Of Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Sort_Tag">Sort Tag</a>
+</li>
+</ul>
+</li>
+<li><a href="/doc/Documentation/Configuration">Configuration</a>
+</li>
+</ul>
+</li><li><a class="current-tree-node" href="/doc/Workflow">Workflow</a>
+</li>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-8">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="site">
+              </div>
+
+
+              <div id="main-content">
+
+                <div class="row">
+                  <div class="col-md-10">
+                    <div id="main-breadcrumb">
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-right">
+                    
+                  </div>
+                </div>
+
+                <h1>Disabling TOC links</h1>
+
+<p>By default, nodes in the TOC tree are clickable links which point either to a predefined page or to the customizable fallback page, If certain nodes should not be clickable at all, i.e. if they are merely used as headlines, they can be styled accordingly, of course. This, however will not disable the link. To actually disable the link, consider using following CSS:</p>
+<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">pointer-event</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>
+</code></pre></div>
+<h1>Collapsable TOC Nodes</h1>
+
+<p>DocToc does not provide a way to label TOC nodes with classes other than the highlighting class (default: <code>doctoc-highlight</code>). If nodes should be collapsable, it is advised to use JavaScript instead. One possible scenario is this:</p>
+
+<ol>
+<li>Insert an element (i.e. a triangle/arrow symbol) before each <code>a</code> element in the TOC tree.</li>
+<li>Add an event listener to each newly insered element.</li>
+<li>Provide a callback for the listender which will collapse/uncollapse the according child elements.</li>
+</ol>
+
+<h1>Multiple Tags</h1>
+
+<p>For each tag that renders HTML there can be multiple instances per page. Example: multiple &quot;Previous&quot;/&quot;Next&quot; link pairs in different locations on the same page.</p>
+
+
+                <div class="row">
+                  <div class="col-xs-6 text-center">
+                    <div id="previous-link">
+                      <a href="/doc/Documentation/Configuration"> ← Previous </a>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 text-center">
+                    <div id="next-link">
+                      <a href="/doc/About"> Next → </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row text-center" id="sibling-children-section">
+                <div class="col-xs-6">
+                  <div>
+                    
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <h3>Sibling Pages</h3><ul><li><a href="/doc/About">About</a></li><li><a href="/doc/Getting Started">Getting Started</a></li><li><a href="/doc/Overview">Overview</a></li><li><a href="/doc/Documentation">Documentation</a></li></ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-2" id="parent-node-link">
+          <div class="row">
+            <a href="/doc"><strong>Parent node</strong> </p>
+          </div>
+        </div>
+
+      </div>
+
+
+  </body>
+</html>

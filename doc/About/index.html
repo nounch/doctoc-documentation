@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>About</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" />
+
+  </head>
+  <body>
+
+    
+
+    <div class="container">
+      <div id="main-header" class="row">
+        <div class="col-md-12">
+          <h1 class="title">Doc<span id="header-toc-part">Toc</span> <span id="sub-header">Jekyll Documentation Helper</span></h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="top-line"></div>
+    <div id="top-line-two"></div>
+
+    <div class="container">
+      <div class="container row">
+
+        <div class="col-md-2">
+          <div class="row">
+            <div id="site-toc" class="col-md-12">
+              <li><a class="current-tree-node" href="/doc/About">About</a>
+</li><li><a href="/doc/Getting_Started">Getting Started</a>
+</li><li><a href="/doc/Overview">Overview</a>
+</li><li><a href="/doc/Documentation">Documentation</a>
+<ul>
+<li><a href="/doc/Documentation/Tags">Tags</a>
+<ul>
+<li><a href="/doc/Documentation/Tags/DocToc_Tag">DocToc Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Breadcrumb_Tag">Breadcrumb Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Up_Tag">Up Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Prev_Tag">Prev Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Next_Tag">Next Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Children_Tag">Children Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Children_Of_Tag">Children Of Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Sibling_Tag">Sibling Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Subtree_Of_Tag">Subtree Of Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Sort_Tag">Sort Tag</a>
+</li>
+</ul>
+</li>
+<li><a href="/doc/Documentation/Configuration">Configuration</a>
+</li>
+</ul>
+</li><li><a href="/doc/Workflow">Workflow</a>
+</li>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-8">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="site">
+              </div>
+
+
+              <div id="main-content">
+
+                <div class="row">
+                  <div class="col-md-10">
+                    <div id="main-breadcrumb">
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-right">
+                    
+                  </div>
+                </div>
+
+                <h1>About</h1>
+
+<p>DocToc is a navigation plugin for <a href="http://jekyllrb.com/">Jekyll</a> that lets you put all your pages in a directory and automatically generates a hierarchical navigation (TOC) with links to all pages. This comes in handy when writing and maintaining documentation.</p>
+
+<p>It also gives you</p>
+
+<ul>
+<li>handy &quot;Previous&quot;/&quot;Next&quot; links,</li>
+<li>a list of links to all siblings of
+
+<ul>
+<li>the current</li>
+<li>or any other tree node,</li>
+</ul></li>
+<li>a subtree for
+
+<ul>
+<li>the current</li>
+<li>or any other tree node</li>
+</ul></li>
+<li>a link to the parent of the current node</li>
+<li>a breadcrumb for the current page</li>
+</ul>
+
+<p>It automatically generates index pages for nodes which do not have any &quot;index.html&quot;, &quot;index.markdown&quot;/&quot;index.md&quot; or &quot;index.textile&quot; pages yet so no link will point to an non-existing page. All components are reasonably customizable and freely stylable.</p>
+
+<p>This is a big deal since it frees you from having to organize your pages as either posts with proper date values in their names (Jekyll is a blog engine afterall) or as pages which are scattered across your top level directory. In other words: <strong>It effectively makes Jekyll a documentation generator.</strong> You simply organize your files in a directory hierarchy, provide a layout file and let DocToc do the rest. Your readers will be presented with an easy-to-navigate hierarchical site navigation and you have the power to point to entire subtrees, sibling or children lists of your documentation. Also, you do not have to care if you forgot to add a file somewhere in the directory structure, DocToc will add a fallback index file which can link to a parent page or any other part of your docs.</p>
+
+<h1>Example</h1>
+
+<p>Here is a schema of the most important tags:</p>
+
+<p><img src="/assets/img/screenshot.png" alt="DocToc Screenshot"></p>
+
+
+                <div class="row">
+                  <div class="col-xs-6 text-center">
+                    <div id="previous-link">
+                      <a href="/doc/Workflow"> ← Previous </a>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 text-center">
+                    <div id="next-link">
+                      <a href="/doc/Getting_Started"> Next → </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row text-center" id="sibling-children-section">
+                <div class="col-xs-6">
+                  <div>
+                    
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <h3>Sibling Pages</h3><ul><li><a href="/doc/Getting Started">Getting Started</a></li><li><a href="/doc/Overview">Overview</a></li><li><a href="/doc/Documentation">Documentation</a></li><li><a href="/doc/Workflow">Workflow</a></li></ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-2" id="parent-node-link">
+          <div class="row">
+            <a href="/doc"><strong>Parent node</strong> </p>
+          </div>
+        </div>
+
+      </div>
+
+
+  </body>
+</html>

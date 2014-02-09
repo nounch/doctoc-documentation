@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>doctoc Tag</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" />
+
+  </head>
+  <body>
+
+    
+
+    <div class="container">
+      <div id="main-header" class="row">
+        <div class="col-md-12">
+          <h1 class="title">Doc<span id="header-toc-part">Toc</span> <span id="sub-header">Jekyll Documentation Helper</span></h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="top-line"></div>
+    <div id="top-line-two"></div>
+
+    <div class="container">
+      <div class="container row">
+
+        <div class="col-md-2">
+          <div class="row">
+            <div id="site-toc" class="col-md-12">
+              <li><a href="/doc/About">About</a>
+</li><li><a href="/doc/Getting_Started">Getting Started</a>
+</li><li><a href="/doc/Overview">Overview</a>
+</li><li><a href="/doc/Documentation">Documentation</a>
+<ul>
+<li><a href="/doc/Documentation/Tags">Tags</a>
+<ul>
+<li><a class="current-tree-node" href="/doc/Documentation/Tags/DocToc_Tag">DocToc Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Breadcrumb_Tag">Breadcrumb Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Up_Tag">Up Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Prev_Tag">Prev Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Next_Tag">Next Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Children_Tag">Children Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Children_Of_Tag">Children Of Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Sibling_Tag">Sibling Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Subtree_Of_Tag">Subtree Of Tag</a>
+</li>
+<li><a href="/doc/Documentation/Tags/Sort_Tag">Sort Tag</a>
+</li>
+</ul>
+</li>
+<li><a href="/doc/Documentation/Configuration">Configuration</a>
+</li>
+</ul>
+</li><li><a href="/doc/Workflow">Workflow</a>
+</li>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-8">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="site">
+              </div>
+
+
+              <div id="main-content">
+
+                <div class="row">
+                  <div class="col-md-10">
+                    <div id="main-breadcrumb">
+                      <a href="/doc/Documentation">Documentation</a><span> → </span><a href="/doc/Documentation/Tags">Tags</a><span> → </span><span>DocToc Tag<span>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-right">
+                    <a href="/doc/Documentation/Tags"><p>↑ Go up</p></a>
+                  </div>
+                </div>
+
+                <h1><code>doctoc</code> Tag</h1>
+
+<p>The <code>doctoc</code> tag renders a nested list of links to pages.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{% doctoc %}
+</code></pre></div>
+<p>Here is some example output:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/About&quot;</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/Documentation&quot;</span><span class="nt">&gt;</span>Documentation<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/Documentation/doctoc_Tag&quot;</span><span class="nt">&gt;</span>doctoc_Tag<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/Getting_started&quot;</span><span class="nt">&gt;</span>Getting_started<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/Overview&quot;</span><span class="nt">&gt;</span>Overview<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre></div>
+<p>The lists are nested according to the <a href="http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_lists2">W3C recommendation</a> where <code>li</code> elements are contained within other <code>li</code> elements.</p>
+
+<p>The tree contains links to all nodes and all leafes in the tree. If some nodes do not specify a <code>index.html</code>/<code>index.markdown</code>/<code>index.md</code>/<code>index.textile</code> file, DocToc will automatically generate fallback index files instead.</p>
+
+<h2>Conventions</h2>
+
+<p>The tree is exclusively generated from the hierarchical file structure in the top level directory of the Jekyll project. DocToc will render a page for every <code>index.{html,markdown,md,textile}</code> file anywhere in the tree. Every leaf node, however, has to have <strong>its own directory with the name of the leaf which contains a <code>index.html</code>/<code>index.markdown</code>/<code>index.md</code>/<code>index.textile</code> file.</strong>. This may seem counterintuitive, but is due to the way Jekyll sweeps up files for Markup to HTML conversion. The advantage is that every leaf can have multiple files which co-exist in one directory where unused files are given names without an HTML/Markdown/Textile extension.</p>
+
+<p>Wrong:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">Colors
+  Bright_Colors
+    red.markdown
+    orange.markdown
+    yellow.markdown
+  Dark_Colors
+    blue.markdown
+    brown.markdown
+</code></pre></div>
+<p>Right:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">Colors
+  Bright_Colors
+    red
+      index.markdown
+    orange
+      index.markdown
+    yellow
+      index.markdown
+  Dark_Colors
+    blue
+      index.markdown
+    brown
+      index.markdown
+</code></pre></div>
+<p>Any <strong>non-leaf directory</strong>, however, can contain an <code>index.html</code>/<code>index.markdown</code>/<code>index.md</code>/<code>index.textile</code> file which will be rendered as a page when the according node link in the TOC is clicked.</p>
+
+<p>Any <strong>underscore</strong> in a directory name will be rendered as a single space in the HTML output.</p>
+
+<p><strong>Any characters</strong> allowed by the file system and recognized by Ruby are theoretically possible, but it makes sense to follow sane file/directory naming conventions and to move any uncommon character combinations down into the textual content of the file.</p>
+
+<h2>Highlighting</h2>
+
+<p>DocToc can highlight the name of the current page in the TOC by applying the <code>doctoc-highlight</code> class to the corresponding <code>a</code> element.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{% doctoc highlight-current-node %}
+</code></pre></div>
+<p>This class can then be used to style the link with CSS or to manipulate it using JavaScript.</p>
+
+<p>Example output:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/About&quot;</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/Documentation&quot;</span><span class="nt">&gt;</span>Documentation<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;doctoc-highlight&quot;</span> <span class="na">href=</span><span class="s">&quot;/doc/Documentation/doctoc_Tag&quot;</span><span class="nt">&gt;</span>doctoc_Tag<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/Getting_started&quot;</span><span class="nt">&gt;</span>Getting_started<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/Overview&quot;</span><span class="nt">&gt;</span>Overview<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre></div>
+<h2>Highlighting with a custom class</h2>
+
+<p><code>doctoc</code> tag also takes an optional second argument along with <code>highlight-current-node</code> which represents the name of the class to be used instead of <code>doctoc-highlight</code>. Note: <strong>No quotes</strong> for the class name.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{% doctoc highlight-current-node, my-custom-class %}
+</code></pre></div>
+<p>Example output:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/About&quot;</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/Documentation&quot;</span><span class="nt">&gt;</span>Documentation<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">class=</span><span class="s">&quot;my-custom-class&quot;</span> <span class="na">href=</span><span class="s">&quot;/doc/Documentation/doctoc_Tag&quot;</span><span class="nt">&gt;</span>doctoc_Tag<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/Getting_started&quot;</span><span class="nt">&gt;</span>Getting_started<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/doc/Overview&quot;</span><span class="nt">&gt;</span>Overview<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre></div>
+<h2><code>parent-node</code> argument</h2>
+
+<p><code>doctoc</code> takes the <code>parent-node</code> argument which renders the entire subtree for the current page if there is a subtree. The optional second argument specifies replacement text which is rendered if the current page does not have a subtree because it is a leaf node. The replacement text can be valid HTML and will be rendered as such.</p>
+
+
+                <div class="row">
+                  <div class="col-xs-6 text-center">
+                    <div id="previous-link">
+                      <a href="/doc/Documentation/Tags"> ← Previous </a>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 text-center">
+                    <div id="next-link">
+                      <a href="/doc/Documentation/Tags/Breadcrumb_Tag"> Next → </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row text-center" id="sibling-children-section">
+                <div class="col-xs-6">
+                  <div>
+                    
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <h3>Sibling Pages</h3><ul><li><a href="/doc/Documentation/Tags/Breadcrumb Tag">Breadcrumb Tag</a></li><li><a href="/doc/Documentation/Tags/Up Tag">Up Tag</a></li><li><a href="/doc/Documentation/Tags/Prev Tag">Prev Tag</a></li><li><a href="/doc/Documentation/Tags/Next Tag">Next Tag</a></li><li><a href="/doc/Documentation/Tags/Children Tag">Children Tag</a></li><li><a href="/doc/Documentation/Tags/Children Of Tag">Children Of Tag</a></li><li><a href="/doc/Documentation/Tags/Sibling Tag">Sibling Tag</a></li><li><a href="/doc/Documentation/Tags/Subtree Of Tag">Subtree Of Tag</a></li><li><a href="/doc/Documentation/Tags/Sort Tag">Sort Tag</a></li></ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-2" id="parent-node-link">
+          <div class="row">
+            <a href="/doc/Documentation/Tags"><strong>Parent node</strong> </p>
+          </div>
+        </div>
+
+      </div>
+
+
+  </body>
+</html>
