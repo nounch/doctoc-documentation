@@ -65,6 +65,7 @@
 </li>
 </ul>
 </li><li><a href="doc/Workflow">Workflow</a>
+</li><li><a href="doc/URLs">URLs</a>
 </li><li><a href="doc/GitHub_Pages">GitHub Pages</a>
 </li>
             </div>
@@ -125,7 +126,12 @@
     index.markdown      # &lt;-- `layout: documenataion&#39;
 # ...
 </code></pre></div>
-<h2>3. A new layout file</h2>
+<h2>3. A new configuration</h2>
+
+<p>Add a base URL to your <code>_config.yml</code>:</p>
+<div class="highlight"><pre><code class="yaml language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">baseurl</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/your/baseurl</span>
+</code></pre></div>
+<h2>4. A new layout file</h2>
 
 <p>Create a new <code>documentation.html</code> layout file in the <code>_layouts</code> directory and put this inside:</p>
 <div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -133,6 +139,8 @@
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;title&gt;</span>Hello DocToc<span class="nt">&lt;/title&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">charname=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;{{ site.baseurl }}/css/main.css&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">media=</span><span class="s">&quot;screen&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;base</span> <span class="na">href=</span><span class="s">&quot;{{ site.baseurl }}/&quot;</span><span class="nt">/&gt;</span>
 
   <span class="nt">&lt;/head&gt;</span>
 
@@ -162,7 +170,7 @@ permalink: /
 
 And some dummy text.
 </code></pre></div>
-<h2>4. A new feeling</h2>
+<h2>5. A new feeling</h2>
 
 <p>Fire up Jekyll...</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">jekyll server --watch --port 8002 --trace
@@ -193,7 +201,7 @@ And some dummy text.
                   </div>
                 </div>
                 <div class="col-xs-6">
-                  <h3>Sibling Pages</h3><ul><li><a href="doc/About">About</a></li><li><a href="doc/Overview">Overview</a></li><li><a href="doc/Documentation">Documentation</a></li><li><a href="doc/Workflow">Workflow</a></li><li><a href="doc/GitHub_Pages">GitHub Pages</a></li></ul>
+                  <h3>Sibling Pages</h3><ul><li><a href="doc/About">About</a></li><li><a href="doc/Overview">Overview</a></li><li><a href="doc/Documentation">Documentation</a></li><li><a href="doc/Workflow">Workflow</a></li><li><a href="doc/URLs">URLs</a></li><li><a href="doc/GitHub_Pages">GitHub Pages</a></li></ul>
                 </div>
               </div>
 
