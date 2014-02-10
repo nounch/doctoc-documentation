@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Fallback</title>
+    <title>GitHub Pages</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/doctoc-documentation/css/bootstrap.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="/doctoc-documentation/css/main.css" type="text/css" media="screen" />
@@ -41,7 +41,7 @@
 <ul>
 <li><a href="doc/Documentation/Tags/DocToc_Tag">DocToc Tag</a>
 </li>
-<li><a class="current-tree-node" href="doc/Documentation/Tags/Breadcrumb_Tag">Breadcrumb Tag</a>
+<li><a href="doc/Documentation/Tags/Breadcrumb_Tag">Breadcrumb Tag</a>
 </li>
 <li><a href="doc/Documentation/Tags/Up_Tag">Up Tag</a>
 </li>
@@ -65,7 +65,7 @@
 </li>
 </ul>
 </li><li><a href="doc/Workflow">Workflow</a>
-</li><li><a href="doc/GitHub_Pages">GitHub Pages</a>
+</li><li><a class="current-tree-node" href="doc/GitHub_Pages">GitHub Pages</a>
 </li>
             </div>
           </div>
@@ -85,32 +85,49 @@
                 <div class="row">
                   <div class="col-md-10">
                     <div id="main-breadcrumb">
-                      <a href="doc/Documentation">Documentation</a><span> → </span><a href="doc/Documentation/Tags">Tags</a><span> → </span><span>Breadcrumb Tag<span>
+                      
                     </div>
                   </div>
                   <div class="col-md-2 text-right">
-                    <a href="doc/Documentation/Tags"><p>↑ Go up</p></a>
+                    
                   </div>
                 </div>
 
-                <div class="fallback">
-  <h2>Breadcrumb Tag <em>(Fallback)</em></h2>
-  <p>There is not much to find on this page.</p>
-  
-  <p>Instead, go one level up to <strong><a href="doc/Documentation/Tags">Tags</a></strong>.</p>
+                <h1>Using DocToc With GitHub Pages</h1>
 
-</div>
+<p>Using DocToc with GitHub pages is straightforward. Since GitHub Pages does not allow to run Jekyll plugins (to prevent arbitrary code execution), DocToc cannot be run live on GitHub Pages. Its output, however, can be hosted, however. After all, Jekyll is a static site generator.</p>
 
+<p>Create an orphaned <code>gh-pages</code> branches in your project:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">git checkout --orphan gh-pages
+</code></pre></div>
+<p>Build the static site:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">jekyll build
+</code></pre></div>
+<p>Remove all Jekyll-related cruft, except <code>_site</code>:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">rm assets
+rm css
+rm _plugins
+<span class="c"># Not: `rm _site&#39;!</span>
+</code></pre></div>
+<p>Warning: Do not remove git-specific files/directories (<code>.git</code>, <code>.gitignore</code> etc.)!</p>
+
+<p>Move everything from <code>_site</code> to the top level directory, remove <code>_site</code> afterwards:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">mv _site/* .
+rm _site
+</code></pre></div>
+<p>Push your branch:</p>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">git push origin gh-pages
+</code></pre></div>
 
                 <div class="row">
                   <div class="col-xs-6 text-center">
                     <div id="previous-link">
-                      <a href="doc/Documentation/Tags/DocToc_Tag"> ← Previous </a>
+                      <a href="doc/Workflow"> ← Previous </a>
                     </div>
                   </div>
                   <div class="col-xs-6 text-center">
                     <div id="next-link">
-                      <a href="doc/Documentation/Tags/Up_Tag"> Next → </a>
+                      <a href="doc/About"> Next → </a>
                     </div>
                   </div>
                 </div>
@@ -123,7 +140,7 @@
                   </div>
                 </div>
                 <div class="col-xs-6">
-                  <h3>Sibling Pages</h3><ul><li><a href="doc/Documentation/Tags/DocToc_Tag">DocToc Tag</a></li><li><a href="doc/Documentation/Tags/Up_Tag">Up Tag</a></li><li><a href="doc/Documentation/Tags/Prev_Tag">Prev Tag</a></li><li><a href="doc/Documentation/Tags/Next_Tag">Next Tag</a></li><li><a href="doc/Documentation/Tags/Children_Tag">Children Tag</a></li><li><a href="doc/Documentation/Tags/Children_Of_Tag">Children Of Tag</a></li><li><a href="doc/Documentation/Tags/Sibling_Tag">Sibling Tag</a></li><li><a href="doc/Documentation/Tags/Subtree_Of_Tag">Subtree Of Tag</a></li><li><a href="doc/Documentation/Tags/Sort_Tag">Sort Tag</a></li></ul>
+                  <h3>Sibling Pages</h3><ul><li><a href="doc/About">About</a></li><li><a href="doc/Getting_Started">Getting Started</a></li><li><a href="doc/Overview">Overview</a></li><li><a href="doc/Documentation">Documentation</a></li><li><a href="doc/Workflow">Workflow</a></li></ul>
                 </div>
               </div>
 
@@ -134,7 +151,7 @@
 
         <div class="col-md-2" id="parent-node-link">
           <div class="row">
-            <a href="doc/Documentation/Tags"><strong>Parent node</strong> </p>
+            <a href="doc"><strong>Parent node</strong> </p>
           </div>
         </div>
 
