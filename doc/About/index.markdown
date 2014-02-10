@@ -29,4 +29,4 @@ This is a big deal since it frees you from having to organize your pages as eith
 
 Here is a schema of the most important tags:
 
-![DocToc Screenshot]({{ site.url }}/assets/img/screenshot.png)
+![DocToc Screenshot]({{ site.baseurl }}/assets/img/screenshot.png)
