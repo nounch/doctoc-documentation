@@ -43,7 +43,15 @@ pages  # <-- For now, call this `pages'!
 # ...
 ```
 
-## 3. A new layout file
+## 3. A new configuration
+
+Add a base URL to your `_config.yml`:
+
+```yaml
+baseurl: /your/baseurl
+```
+
+## 4. A new layout file
 
 Create a new `documentation.html` layout file in the `_layouts` directory and put this inside:
 
@@ -53,6 +61,8 @@ Create a new `documentation.html` layout file in the `_layouts` directory and pu
   <head>
     <title>Hello DocToc</title>
     <meta charname="utf-8" />
+    <link rel="stylesheet" href="{% raw %}{{ site.baseurl }}{% endraw %}/css/main.css" type="text/css" media="screen" />
+    <base href="{% raw %}{{ site.baseurl }}{% endraw %}/"/>
 
   </head>
   
@@ -86,7 +96,7 @@ permalink: /
 And some dummy text.
 ```
 
-## 4. A new feeling
+## 5. A new feeling
 
 Fire up Jekyll...
 

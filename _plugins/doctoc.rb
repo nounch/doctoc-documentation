@@ -679,15 +679,15 @@ eos
                   IndexPage.new(site, site.source,
                                 '/',
                                 @index_page_file_name, {
-                                  'parent' => parent_path,
+                                  'parent' => parent_path.gsub(/ /, '_'),
                                   'has_parent' => has_parent,
                                   'parent_name' =>
                                   File.basename(parent_path),
                                   'doctoc' => toc,
                                   'path' =>
-                                  File.join(path_tree.find(k, path_tree.root).name.gsub(/^\//, ''),
+                                  File.join(path_tree.find(k, path_tree.root).name.gsub(/^\//, '').gsub(/ /, '_'),
                                             @index_page_file_name),
-                                  'current_node' => File.basename(k),
+                                  'current_node' => File.basename(k.gsub(/_/, ' ')),
                                   'doctoc_prev_next_list' =>
                                   @prev_next_list
                                 },
@@ -695,7 +695,7 @@ eos
 
                 index_page.render(site.layouts, site.site_payload)
                 # index_page.write(site.dest)
-                index_page.write(File.join(site.dest, k))
+                index_page.write(File.join(site.dest, k.gsub(/ /, '_')))
                 site.pages << index_page
 
                 # This may become a future feature.
