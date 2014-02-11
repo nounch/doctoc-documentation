@@ -14,7 +14,7 @@ Some Tags have optional text arguments which will become part of the rendered HT
 
 ## Top-Level Directory
 
-DocToc has the requirement that the file hierarchy is placed in one top-level directory which is located in the root of the Jekyll project. This is due to the fact that Jekyll requires pages to be placed in a directory in its root.
+DocToc has the requirement that the file hierarchy is placed in one top-level directory which is located in the root of the Jekyll project.
 
 ## Each Page File Lives In Its Own Directory
 Each page file which represents a leaf node in the TOC tree has to be placed in its own directory. The name of the directory will make up the name of the leaf node rendered in the TOC tree, children/sibling lists, subtrees, parent links etc. The file has to have one of the following names:
